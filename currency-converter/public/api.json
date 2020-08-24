@@ -1,0 +1,59 @@
+{
+  "openapi": "3.0.n",
+  "info": {
+    "version": 1.0,
+    "title": "Currency converter"
+  },
+  "paths": {
+    "/": {
+      "post": {
+        "summary": "Convert currencies",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "from": {
+                    "type": "string",
+                    "example": "EUR"
+                  },
+                  "to": {
+                    "type": "string",
+                    "example": "USD"
+                  },
+                  "amount": {
+                    "type": "number",
+                    "example": 100.5
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "result": {
+                      "type": "number",
+                      "example": 123.4567
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Some property is missing or invalid",
+            "content": {
+              "text/plain": {}
+            }
+          }
+        }
+      }
+    }
+  }
+}
