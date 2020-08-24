@@ -5,26 +5,7 @@ use App\Support\Exceptions\NotFoundException;
 use App\Support\Http\Request;
 use App\Support\Http\Response;
 
-function dd(...$vars)
-{
-    foreach ($vars as $var) {
-        d($var);
-    }
-    exit();
-}
-
-function d($var)
-{
-    ob_start();
-    var_dump($var);
-    $buffer = ob_get_clean();
-    echo "<pre>" . htmlentities($buffer) . "</pre>";
-}
-
-$autoloader_mapping = require_once __DIR__ . '/../../config/autoload.php';
-$autoloader_base_dir = __DIR__ . '/../../';
-
-require_once 'autoload.php';
+require_once __DIR__.'/../../vendor/autoload.php';
 
 $app = new App($argv);
 

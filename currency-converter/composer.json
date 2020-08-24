@@ -1,0 +1,12 @@
+{
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/",
+      "App\\Support\\Http\\": "app/support/http/",
+      "App\\Support\\Router\\": "app/support/router/",
+      "App\\Support\\Exceptions\\": "app/support/exceptions/",
+      "App\\Controllers\\": "app/controllers/",
+      "App\\Services\\": "app/services/"
+    }
+  }
+}
